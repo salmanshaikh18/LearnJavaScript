@@ -1,3 +1,5 @@
+## NodeList
+
 In JavaScript, a `NodeList` is a collection of nodes. A NodeList is often returned by DOM (Document Object Model) methods and represents an ordered list of nodes (such as elements or text nodes) that match a certain criteria. It is not an array but is similar in that it is a list-like object.
 
 Here are some key points about `NodeList`:

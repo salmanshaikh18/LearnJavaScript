@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorChanger</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+        .box {
+            height: 100px;
+            width: 100px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+        .box1 {
+            background-color: grey;
+        }
+        .box2 {
+            background-color: salmon;
+        }
+        .box3 {
+            background-color: blue;
+        }
+        .box4 {
+            background-color: blueviolet;
+        }
+        body {
+            transition: 0.5s all ease;
+        }
+        @media (max-width: 500px) {
+            .container {
+                flex-direction: column;
+                margin-top: 20px;
+            }
+            nav ul li a {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+         <li>
+             <a href="./index.html">Home</a>
+         </li>
+         <li>
+             <a href="">GitHub</a>
+         </li>
+         <li>
+             <a href="">LinkedIn</a>
+         </li>
+        </ul>
+     </nav>
+
+     <div class="container"> 
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+
+
+</body>
+<script>
+    // const box1 = document.querySelector('.box1')
+    // const box2 = document.querySelector('.box2')
+    // const box3 = document.querySelector('.box3')
+    // const box4 = document.querySelector('.box4')
+    const body = document.querySelector('body')
+
+    // box1.addEventListener('click', () => {
+    //     body.style.backgroundColor = 'grey'
+    // })
+    // box2.addEventListener('click', () =>{
+    //     body.style.backgroundColor = 'salmon'
+    // })
+    // box3.addEventListener('click', () => {
+    //     body.style.backgroundColor = 'blue'
+    // })
+    // box4.addEventListener('click', () => {
+    //     body.style.backgroundColor = 'blueviolet'
+    // })
+
+    // Optimize Way
+    const boxes = document.querySelectorAll('.box') // It returns nodelist. In JavaScript, a NodeList is a collection of nodes. A NodeList is often returned by DOM (Document Object Model) methods and represents an ordered list of nodes (such as elements or text nodes) that match a certain criteria. It is not an array but is similar in that it is a list-like object.
+    // console.log(boxes)
+
+    boxes.forEach((el) => {
+        console.log(el)
+        el.addEventListener('click', (e) => {
+            console.log("e: ", e)
+            console.log("e.target: ", e.target)
+            console.log(e.target.className)
+            if (e.target.className.includes('box1')) {
+                body.style.backgroundColor = 'grey'
+            } else if (e.target.className.includes('box2')) {
+                body.style.backgroundColor = 'salmon'
+            } else if (e.target.className.includes('box3')) {
+                body.style.backgroundColor = 'blue'
+            } else if (e.target.className.includes('box4')) {
+                body.style.backgroundColor = 'blueviolet'
+            }
+        })
+    })
+
+</script>
+</html>
