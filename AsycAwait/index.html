@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: black;">
     <h1></h1>
     <button id="start">Start</button>
     <button id="stop">Stop</button>
@@ -15,8 +15,8 @@
         console.log(str, Date.now())
     }
 
-    const start = document.querySelector('#start')
-    const stop= document.querySelector('#stop')
+    const start = document.querySelector('button:nth-child(2)')
+    const stop = document.querySelector('button:nth-child(3)')
 
     let intervalId = undefined
 
