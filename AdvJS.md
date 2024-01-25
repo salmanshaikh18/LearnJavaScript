@@ -1,5 +1,58 @@
 JavaScript is often described as a synchronous and single-threaded programming language.
 
+## Execution context, Call Stack, Memory Heap
+
+In JavaScript, the concepts of "execution context," "call stack," and "memory heap" are fundamental to understanding how the language works.
+
+### 1. Execution Context:
+- An execution context is an abstract concept representing the environment in which JavaScript code is executed. It includes information about the code being executed, variables, scope, and more.
+- There are three types of execution contexts in JavaScript:
+  - **Global Execution Context:** The default or outermost execution context. It represents the entire script and is created when the script is executed.
+  - **Function Execution Context:** Created when a function is called. Each function call has its own execution context.
+  - **Eval Execution Context:** Created when code is executed inside an `eval` function.
+
+### 2. Call Stack:
+- The call stack is a data structure that keeps track of the execution context of a program. It follows the Last In, First Out (LIFO) principle, where the last function called is the first one to be resolved.
+- When a function is called, its execution context is pushed onto the call stack. When the function completes, its context is popped off the stack.
+- The call stack helps in managing the flow of execution in a synchronous, single-threaded environment.
+
+### 3. Memory Heap:
+- The memory heap is a region in a computer's memory where variables and objects are stored.
+- It is a large, unstructured region of memory, and the JavaScript runtime allocates memory for variables and objects dynamically during the program's execution.
+- Objects in the heap can reference each other, creating complex data structures.
+
+### Example:
+```javascript
+function greet(name) {
+  let message = `Hello, ${name}!`;
+  console.log(message);
+}
+
+function main() {
+  console.log('Start');
+  greet('Alice');
+  greet('Bob');
+  console.log('End');
+}
+
+main();
+```
+
+**Execution Flow:**
+1. The global execution context is created when the script starts (`main` function call).
+2. `main` function is called, and its execution context is pushed onto the call stack.
+3. `console.log('Start')` is executed, and then the `greet('Alice')` function is called.
+4. The `greet` function is pushed onto the call stack, and its execution context is created.
+5. Inside `greet`, `let message = ...` is executed, and `console.log(message)` is called.
+6. After `greet('Alice')` completes, its execution context is popped off the stack.
+7. The same steps happen for `greet('Bob')`.
+8. Finally, `console.log('End')` is executed in the `main` function, and the global execution context is completed.
+
+Understanding these concepts is crucial for debugging, optimizing code, and grasping the fundamentals of how JavaScript manages the execution of your programs.
+
+
+## Synchronous,  Single threaded
+
 ### Synchronous:
 - In a synchronous programming language, code is executed sequentially, one statement at a time.
 - Each statement must complete before the next one starts.
@@ -78,3 +131,10 @@ async function example() {
 In this example, the function `example` logs "Start," then waits for the promise returned by `someAsyncFunction` to resolve before logging the result and finally logging "End."
 
 Using `async` and `await` is particularly beneficial when dealing with asynchronous operations such as fetching data from APIs, reading files, making database queries, etc. These features simplify the syntax and structure of asynchronous code, making it more intuitive and easier to reason about.
+
+
+## Blocking code vs Non-blocking code
+
+Blocing code: Block the flow of program (sync)
+
+Non-blocking code: Does not block execution (async)

@@ -125,3 +125,5 @@ document.getElementById('child').addEventListener('click', function (event) {
 In this example, if you click the child element, the event will be handled by both the child and the parent event handlers. However, if you include `event.stopPropagation()` in either the child or the parent event handler, it will prevent the event from propagating further, and only the handler that called `stopPropagation` will be executed.
 
 Keep in mind that while using `stopPropagation` can be useful in certain scenarios, it should be used judiciously, as it may make your application more difficult to understand and maintain. In some cases, it might be more appropriate to use event delegation or other techniques to achieve the desired behavior.
+
+
