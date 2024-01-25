@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const div = document.createElement('div')
+    div.className = 'main'
+    div.id = 'myId'
+    div.innerText = 'This is a div tag.'
+    div.setAttribute('title', 'this is a value of title')
+    div.style.backgroundColor = 'red'
+    div.style.color = 'green'
+    const addText = document.createTextNode("Full Stack Developer")
+    div.appendChild(addText)
+    document.body.appendChild(div)
+</script>
+</html>
