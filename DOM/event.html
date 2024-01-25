@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Click Me</button>
+</body>
+<script>
+    const btn = document.querySelector('button')
+    btn.addEventListener('click', (e) => {
+        btn.innerHTML = 'Clicked!'
+        console.log(e.target)
+    }, false)
+
+    // type, timeStamp, defaultPrevent
+    // target, toElement, srcElement, currentTarget
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keycode
+
+    // Event bubbling and Event Capturing
+
+    
+</script>
+</html>
