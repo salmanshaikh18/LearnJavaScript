@@ -1,3 +1,52 @@
+## Event Capturing
+
+Event propagation refers to the process of how events in the Document Object Model (DOM) are transmitted or propagated from the target element that triggered the event to other elements in the document. There are two main phases of event propagation: event capturing and event bubbling.
+
+1. **Event Capturing (or Trickling) Phase:**
+   - The event starts from the root of the document and goes down to the target element.
+   - It is less commonly used but can be enabled by passing `true` as the third parameter to the `addEventListener` method.
+   - Event handlers attached during the capturing phase are executed before the actual target is reached.
+
+2. **Target Phase:**
+   - The event reaches the target element, and its associated event handlers are executed.
+
+3. **Event Bubbling Phase:**
+   - After the target phase, the event bubbles up from the target element to the root of the document.
+   - Event handlers attached during the bubbling phase are executed as the event travels back up the DOM hierarchy.
+   - Bubbling is the default behavior if the third parameter of `addEventListener` is not set or set to `false`.
+
+Here's a quick summary of the flow:
+
+```
+Capturing Phase (top-down)   |    Target Phase    |    Bubbling Phase (bottom-up)
+-----------------------------|---------------------|-------------------------------
+                             |  Target element     | 
+ Root  -->  Ancestors         |       (Event        |      Ancestors  -->  Root
+        <--  (Event           |        handlers     |      (Event handlers
+                             |        execute)      |       execute)
+```
+
+### Example:
+
+```html
+<div id="parent">
+  <button id="child">Click me</button>
+</div>
+
+<script>
+  document.getElementById('parent').addEventListener('click', function () {
+    console.log('Parent Clicked (Bubbling)');
+  });
+
+  document.getElementById('child').addEventListener('click', function () {
+    console.log('Child Clicked');
+  });
+</script>
+```
+
+If you click the button in this example, you'll see "Child Clicked" logged first (target phase), followed by "Parent Clicked (Bubbling)" (bubbling phase). The event propagates from the button to its parent div during the bubbling phase.
+
+
 ## Event Bubbling adn Event Capturing
 
 Event bubbling and event capturing are two phases of the event propagation process in the Document Object Model (DOM) in JavaScript. These phases describe the order in which events are handled as they propagate through the DOM hierarchy.
