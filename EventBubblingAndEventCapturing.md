@@ -100,3 +100,28 @@ Event bubbling and event capturing are two phases of the event propagation proce
   If you click the button, you'll see "Parent Clicked (Capturing)" logged before "Child Clicked." The event is captured during the downward phase.
 
 In practice, event bubbling is more commonly used and understood. You often attach event handlers to the target element and let the event bubble up through the DOM hierarchy. Event capturing is typically needed in more complex scenarios where you want to capture events before they reach the target element during the downward phase.
+
+
+## stopPropagation()
+
+In JavaScript, the `stopPropagation` method is used to prevent the further propagation of an event through the DOM hierarchy during event handling. It is often employed within event handlers to stop the event from reaching either the capturing phase or the bubbling phase, depending on where it is called.
+
+Here's how you can use `stopPropagation`:
+
+```javascript
+document.getElementById('parent').addEventListener('click', function (event) {
+  console.log('Parent Clicked');
+  // Stop the propagation of the event
+  event.stopPropagation();
+});
+
+document.getElementById('child').addEventListener('click', function (event) {
+  console.log('Child Clicked');
+  // Stop the propagation of the event
+  event.stopPropagation();
+});
+```
+
+In this example, if you click the child element, the event will be handled by both the child and the parent event handlers. However, if you include `event.stopPropagation()` in either the child or the parent event handler, it will prevent the event from propagating further, and only the handler that called `stopPropagation` will be executed.
+
+Keep in mind that while using `stopPropagation` can be useful in certain scenarios, it should be used judiciously, as it may make your application more difficult to understand and maintain. In some cases, it might be more appropriate to use event delegation or other techniques to achieve the desired behavior.
