@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Full Stack Development</h1>
+        <p id="ye id hai" class=" ye class hai">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae possimus aut reprehenderit accusamus fugit neque obcaecati modi, asperiores molestias ullam atque dolorem.</p>
+        <p>This a second p tag</p>
+        <input type="text" placeholder="Enter Name: ">
+        <input type="password" placeholder="Enter Password: ">
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    </div>
+
+    <script>
+
+        const ul = document.querySelector('ul')
+
+        const li = ul.querySelector('li')
+
+        li.style.color = 'green'
+
+        const lis = ul.querySelectorAll('li')
+        lis[2].style.color = 'blue'
+
+        lis.forEach((li) => {
+            li.style.backgroundColor = 'yellow'
+        })
+
+        console.log("lis: ", lis)
+
+        console.log("ul: ", ul)
+        console.log("li: ", li)
+
+
+        const input = document.querySelector('input[type="password"]') // Select only those input that have type attribute = password
+
+        input.style.color = 'red'
+        
+
+        const p = document.querySelector('p') // get first p element
+
+        p.setAttribute('value', 'salman')
+
+        console.log("p.id: ", p.id)
+
+        console.log("p.className: ", p.className)
+
+        console.log("p.getAttribute: ", p.getAttribute('id'))
+
+        p.style.backgroundColor = 'green'
+
+        p.style.padding = '15px'
+
+        p.style.borderRadius = '15px'
+        p.style.color = '#fff'
+
+        console.log("p.textContext: ", p.textContent) // get all text content of an element
+
+        console.log("p.innerHTML: ", p.innerHTML) // get text with html elements
+
+        console.log("p.innerText: ", p.innerText) // get the only text those are visible to the web page
+    </script>
+</body>
+</html>
