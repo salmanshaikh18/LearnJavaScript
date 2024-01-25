@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .main h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #timer h1 {
+            font-size: 40px;
+        }
+        .main {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #timer {
+            background-color: grey;
+            color: salmon;
+            height: 20vh;
+            width: 90vw;
+            margin: 0 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #fff, -0 -0 15px red;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        @media (min-width: 700px) {
+            #timer {
+                width: 60vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+         <li>
+             <a href="./index.html">Home</a>
+         </li>
+         <li>
+             <a href="">GitHub</a>
+         </li>
+         <li>
+             <a href="">LinkedIn</a>
+         </li>
+        </ul>
+     </nav>
+
+     <div class="main">
+        <h1>Local Time</h1>
+        <div id="timer">
+            <h1 id="time"></h1>
+        </div>
+     </div>
+</body>
+<script>
+   
+    const h1 = document.querySelector('#time')
+    setInterval(() => {
+        let date = new Date()
+        let time = date.toLocaleTimeString()
+        h1.innerHTML = time
+    }, 1000)
+
+</script>
+</html>
