@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .homePage {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5px;;
+        }
+        .homePage h1 {
+            text-align: center;
+            margin: 5px 0;
+        }
+        .homePage h3 {
+            font-weight: lighter;
+            text-align: center;
+        }
+        .homePage input {
+            padding: 5px 10px;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        .homePage button {
+            color: #fff;
+            background-color: grey;
+            transition: 0.5s all ease;
+            font-size: 18px;
+            padding: 5px 10px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+        }
+        .homePage .result {
+            background-color: grey;
+            color: blue;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+         <li>
+             <a href="./index.html">Home</a>
+         </li>
+         <li>
+             <a href="">GitHub</a>
+         </li>
+         <li>
+             <a href="">LinkedIn</a>
+         </li>
+        </ul>
+     </nav>
+
+     <div class="homePage">
+        <h1>Number Guessing Game</h1>
+        <h3>Try and guess a random number between 1 and 100.</h2>
+        <h3>You have 10 attempts to guess the right number.</h3>
+        <h1>Guess a Number</h1>
+        <input type="text" placeholder="Enter a Numer: ">
+        <button>Submit Guesses</button>
+        <h3>Previous Guesses: </h3>
+        <h3>Guesses Remaining: 10</h3>
+        <div class="result">Result will be appear here</div>
+     </div>
+</body>
+<script>
+    
+</script>
+</html>
