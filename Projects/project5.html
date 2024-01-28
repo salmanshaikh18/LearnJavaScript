@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnlimitedColors</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 55px;
+            height: 80vh;
+            flex-wrap: wrap;
+        }
+        .box button {
+            background-color: grey;
+            color: #fff;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s all ease;
+        }
+        .box button:hover { 
+            background-color: #fff;
+            color:  salmon;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+         <li>
+             <a href="./index.html">Home</a>
+         </li>
+         <li>
+             <a href="">GitHub</a>
+         </li>
+         <li>
+             <a href="">LinkedIn</a>
+         </li>
+        </ul>
+     </nav>
+     <div class="box">
+        <button>Start</button>
+        <button>Stop</button>
+     </div>
+</body>
+<script>
+    let timer = ''
+    const h1 = document.createElement('h1')
+    document.querySelector('.box').appendChild(h1)
+    const start = document.querySelector('button:nth-child(1)')
+    const stop = document.querySelector('button:nth-child(2)')
+    start.addEventListener('click', () => {
+        h1.innerHTML = `Started :)`
+        
+        timer = setInterval(() => {
+            generateRandomColor()
+        }, 1000)
+    })
+    stop.addEventListener('click', () => {
+        h1.innerHTML = `Stopped :(`
+        clearInterval(timer)
+    })
+
+    // generate a random color
+
+    const generateRandomColor = () => {
+        const hexValues = '0123456789ABCDEF' // Hex values contains these values
+
+        let color = '#'
+
+        for (let i = 1; i <= 6; i ++) {
+            let index = Math.floor(Math.random() * hexValues.length)
+            color += hexValues[index]
+        }
+
+        document.body.style.backgroundColor = color
+        console.log(color)
+
+    }
+</script>
+</html>
