@@ -38,6 +38,8 @@
             border: none;
             outline: none;
             border-radius: 5px;
+            cursor: pointer;
+            transition: 0.5s all ease;
         }
         .homePage .result {
             background-color: grey;
@@ -45,6 +47,10 @@
             font-size: 20px;
             padding: 10px 20px;
             border-radius: 5px;
+        }
+        .homePage button:hover {
+            color: salmon;
+            background-color: #fff;
         }
     </style>
 </head>
@@ -68,14 +74,13 @@
         <h3>Try and guess a random number between 1 and 100.</h2>
         <h3>You have 10 attempts to guess the right number.</h3>
         <h1>Guess a Number</h1>
-        <input type="text" placeholder="Enter a Numer: ">
-        <button>Submit Guesses</button>
+        <input id="userInput" type="text" placeholder="Enter a Numer: ">
+        <button id="submit">Submit Guesses</button>
         <h3>Previous Guesses: </h3>
-        <h3>Guesses Remaining: 10</h3>
+        <h3 id="life">Guesses Remaining: 10</h3>
         <div class="result">Result will be appear here</div>
+        <button id="playAgain">Play Again</button>
      </div>
 </body>
-<script>
-    
-</script>
+<script src="./project4.js"></script>
 </html>
