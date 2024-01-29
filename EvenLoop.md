@@ -5,7 +5,7 @@
 
 ## JS Engine
 
-A JavaScript engine is like a translator and executor for JavaScript code in a web browser or another environment. Its job is to take the JavaScript code that developers write and make it work on your computer or device. The engine is a crucial part of web browsers, as it allows websites to be interactive and dynamic.
+`A JavaScript engine is like a translator and executor for JavaScript code in a web browser or another environment.` Its job is to take the JavaScript code that developers write and make it work on your computer or device. The engine is a crucial part of web browsers, as it allows websites to be interactive and dynamic.
 
 Here's a simplified breakdown of how a JavaScript engine works:
 
