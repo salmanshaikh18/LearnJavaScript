@@ -123,3 +123,53 @@ console.log("End of the program");
 In this example, the `setTimeout` functions are asynchronous tasks. The callbacks for these tasks will be placed in the task queue after the specified delays. The order of execution ensures that the tasks are processed after the synchronous code has finished running.
 
 Understanding the task queue is crucial for managing the flow of asynchronous code execution in JavaScript and ensuring that tasks are processed in a controlled manner.
+
+
+## Task Queue
+
+`In the context of the JavaScript event loop, the task queue is a crucial component that helps manage the order of execution for asynchronous tasks.` Let's break down how the task queue fits into the overall event loop:
+
+1. **Execution Phases:**
+   - The JavaScript event loop has different phases, including the execution of synchronous code, handling timers and intervals, processing microtasks, and dealing with I/O events.
+
+2. **Task Queue:**
+   - The task queue is where callbacks of certain asynchronous operations are placed once they are completed. Asynchronous operations include things like `setTimeout`, user input events, and AJAX requests.
+
+3. **Event Loop Iteration:**
+   - During each iteration of the event loop, the JavaScript engine checks various queues to determine which tasks need to be executed.
+
+4. **Message Queue and Task Queue:**
+   - The terms "message queue" and "task queue" are often used interchangeably. The message queue can contain both "messages" (representing events like user input) and "tasks" (representing callbacks of completed asynchronous operations).
+
+5. **Processing the Task Queue:**
+   - When the call stack is empty (i.e., no synchronous code is currently running), the event loop looks at the task queue. If there are tasks in the task queue, it picks the first one and pushes it onto the call stack for execution.
+
+6. **Order of Execution:**
+   - Tasks in the task queue are processed in the order in which they were added. Older tasks have priority over newer ones, ensuring a first-in, first-out (FIFO) order.
+
+Here's a simplified example to illustrate how the task queue works:
+
+```javascript
+console.log("Start of the program");
+
+setTimeout(() => {
+  console.log("Task 1: This will be executed later");
+}, 2000);
+
+console.log("Middle of the program");
+
+setTimeout(() => {
+  console.log("Task 2: This will be executed after Task 1");
+}, 1000);
+
+console.log("End of the program");
+```
+
+In this example, the `setTimeout` functions are asynchronous tasks. The callbacks for these tasks will be placed in the task queue after the specified delays. The order of execution ensures that the tasks are processed after the synchronous code has finished running.
+
+Understanding the task queue is crucial for managing the flow of asynchronous code execution in JavaScript and ensuring that tasks are processed in a controlled manner.
+
+
+## Micro Task Queue 
+
+`Micro Task Queue ia a  priority task queue which is only created for fetch `
