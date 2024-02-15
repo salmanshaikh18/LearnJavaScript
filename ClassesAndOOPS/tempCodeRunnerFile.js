@@ -1,0 +1,1 @@
+ject.setPrototypeOf(TeachingSupport, Teacher)
